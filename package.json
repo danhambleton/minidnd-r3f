@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@babel/core": "^7.17.10",
+    "@react-three/drei": "^9.7.1",
+    "@react-three/fiber": "^8.0.12",
+    "babel-plugin-glsl": "^1.0.0",
+    "material-icons": "^1.10.9",
+    "next": "latest",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "three": "^0.140.0"
+  }
+}
