@@ -9,8 +9,8 @@ import * as THREE from "three";
 const HexMapMaterial = shaderMaterial(
   { 
     u_token_position : new THREE.Vector3(0,0,0),
-    u_hex_fade_distance : 1000,
-    u_grid_scale : 1,
+    u_hex_fade_distance : 5,
+    u_grid_scale : 0.3,
     u_grid_alpha : 0.2,
     u_grid_spacing :  0.01,
     blending: THREE.NormalBlending,

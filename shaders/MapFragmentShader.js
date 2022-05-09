@@ -84,8 +84,6 @@ void main() {
     vec4 col = mix(col_inside, col_outside, step(0.0, sd));
     float dist_change = fwidth(sd) * 0.5;
 
-    
-
     // Major contour lines
     {
         float spacing = u_contour_spacing;
@@ -99,8 +97,8 @@ void main() {
   // Initiate the background to a white color, putting in some dark borders.
     vec4 hexCol = col;//mix(vec4(1., 1., 1., u_grid_alpha), vec4(1., 1., 1., 0.), step(0.0, u_grid_spacing, sd)); 
 
-    float distToTokenPos = length(vec2(u_token_position.x, u_token_position.z) - center_coord.xy);
-    hexCol = mix(hexCol, vec4(0.0, 0.0, 0.0, 1.0), distToTokenPos / u_hex_fade_distance);
+    float distToTokenPos = length(vec2(u_token_position.x, u_token_position.y) - center_coord.xy);
+    hexCol = mix(hexCol, vec4(0.0, 0.0, 0.0, 1.0), smoothstep(2.0 * u_grid_scale, u_hex_fade_distance, distToTokenPos ));
 
 
     gl_FragColor = hexCol;

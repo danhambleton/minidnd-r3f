@@ -12,5 +12,5 @@ export function CameraController (props) {
 //   if (props.controlStyle === 'orbit') {
 //     return <OrbitControls rotateSpeed={2} />
 //   }
-  return <OrbitControls rotateSpeed={2} />
+  return <OrbitControls makeDefault rotateSpeed={2} />
 }
