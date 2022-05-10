@@ -16,7 +16,7 @@ import datetime
 
 ALLOWED_EXTENSIONS = {'spec', 'obj', 'stl', 'ply', 'txt', 'png', 'jpg', 'jpeg', 'gif'}
 
-app = flask.Flask(__name__, static_url_path='', static_folder='.next')
+app = flask.Flask(__name__)
 CORS(app)
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -26,6 +26,6 @@ app.config['SQLALCHEMY_DATABASE_URI']= 'sqlite:////home/daniel/Dev/minidnd-r3f/m
 charset = '1234567890abcdefghijklmnopqrstuvwxyz'
 db = SQLAlchemy(app)
 
-@app.route("/", methods=['GET', 'POST'])
-def index():
-    return send_from_directory(app.static_folder,'index.html')
+@app.route("/api/hello", methods=['GET', 'POST'])
+def api_hello():
+    return jsonify({ "hello" : "there "})
